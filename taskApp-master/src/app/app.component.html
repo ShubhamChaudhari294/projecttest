@@ -16,17 +16,10 @@
     </div>
     <div>
         <h3>Create task</h3>
-        <form [formGroup]="heroForm" novalidate>
-            <div class="form-group">
-                <label class="center-block">Title:
-                <input class="form-control" formControlName="title">
-                </label>
-            </div>
-            <div class="form-group">
-                <label class="center-block">Description:
-                <input class="form-control" formControlName="description">
-                </label>
-            </div>
-        </form>
+        <form [formGroup]="Form" (ngSubmit)="createTask($event)">
+            <input formControlName="title" type="text" placeholder="Your title">
+            <input formControlName="description" type="text" placeholder="Your description">
+            <button type="submit">Log in</button>
+       </form>
     </div>
 </div>
