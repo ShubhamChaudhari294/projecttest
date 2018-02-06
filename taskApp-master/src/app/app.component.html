@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>My Task APP</h3>
+        </div>
+    </div>
+    <button (click)="loadTasks()" style="float:right">Load Tasks</button>
+    <div *ngFor="let profiles of profile['documents']">
+        <table style="color:black">
+            <tr>
+               <td class="col-md-4"> <h4 style="text-align:left">{{profiles.fields.title.stringValue}}</h4></td> 
+               <td class="col-md-4"><h4 style="text-align:left">{{profiles.fields.description.stringValue}}</h4></td>
+               <td><button (click)="deleteTasks(profiles.name)" style="color:red">Delete Task</button></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h3>Create task</h3>
+        <form [formGroup]="heroForm" novalidate>
+            <div class="form-group">
+                <label class="center-block">Title:
+                <input class="form-control" formControlName="title">
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="center-block">Description:
+                <input class="form-control" formControlName="description">
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
